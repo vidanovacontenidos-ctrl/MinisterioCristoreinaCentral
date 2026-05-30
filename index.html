@@ -18,17 +18,27 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Lato',sans-serif;background:var(--white);color:var(--charcoal);overflow-x:hidden;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 48px;height:70px;display:flex;align-items:center;justify-content:space-between;background:transparent;transition:background .35s,box-shadow .35s;}
-nav.scrolled{background:rgba(24,19,13,.96);box-shadow:0 1px 0 rgba(255,255,255,.06);backdrop-filter:blur(8px);}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+/* ─── NAV ─────────────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:transparent;transition:background .35s,box-shadow .35s;}
+nav.scrolled{background:rgba(24,19,13,.96);box-shadow:0 1px 0 rgba(255,255,255,.07);backdrop-filter:blur(10px);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
 .logo-name{font-family:'Lato',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:1.1;}
 .logo-tagline{font-family:'Arapey',serif;font-style:italic;font-size:11px;color:var(--terra);letter-spacing:.08em;display:block;margin-top:2px;}
-.nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
+/* Desktop links */
+.nav-links{display:flex;gap:28px;list-style:none;align-items:center;margin:0;padding:0;}
 .nav-links a{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--terra);}
 .nav-cta{background:var(--copper)!important;color:var(--white)!important;padding:10px 20px;letter-spacing:.14em!important;transition:background .2s!important;}
 .nav-cta:hover{background:var(--copper2)!important;}
+/* Hamburger — hidden on desktop */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0;flex-shrink:0;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.75);border-radius:1px;transition:all .3s;}
+/* Overlay menu — ALWAYS hidden by default, shown only via .is-open */
+.nav-overlay{display:none;position:fixed;inset:0;background:rgba(24,19,13,.98);z-index:400;flex-direction:column;align-items:center;justify-content:center;gap:36px;}
+.nav-overlay.is-open{display:flex;}
+.nav-overlay a{font-size:24px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s;}
+.nav-overlay a:hover,.nav-overlay a:active{color:var(--terra);}
+.nav-overlay-close{position:fixed;top:18px;right:18px;width:44px;height:44px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:28px;color:rgba(255,255,255,.45);z-index:410;}
 
 /* HERO */
 .hero{position:relative;width:100%;height:100vh;min-height:640px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
@@ -228,47 +238,31 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
 .whatsapp-btn:hover{transform:scale(1.08);box-shadow:0 5px 20px rgba(37,211,102,.45);}
 .whatsapp-btn svg{width:26px;height:26px;fill:var(--white);}
 /* MOBILE */
-/* Close btn — creado por JS, no existe en el DOM hasta que se abre el menú */
 @media(max-width:767px){
   nav{padding:0 16px;}
   .nav-links{display:none;}
-  #mobileMenuBtn{display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:8px;}
-  #mobileMenuBtn svg{width:22px;height:22px;stroke:rgba(255,255,255,.7);fill:none;stroke-width:2;stroke-linecap:round;}
-  #mobileMenu{display:none;position:fixed;inset:0;background:rgba(24,19,13,.98);z-index:500;flex-direction:column;align-items:center;justify-content:center;gap:32px;}
-  #mobileMenu.open{display:flex;}
-  #mobileMenu a{font-size:22px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}
-  #mobileMenu a:hover{color:var(--terra);}
-  /* Vision/pastores */
+  .nav-hamburger{display:flex;}
+  /* Secciones */
   .vision{padding:56px 20px;}
   .pastores-card{flex-direction:column;align-items:center;padding:28px 20px;text-align:center;gap:24px;}
   .pastores-photo{width:160px;height:160px;}
-  /* Videos */
   .videos{padding:48px 20px;}
   .video-grid{grid-template-columns:1fr;}
   .videos-top{flex-direction:column;align-items:flex-start;gap:16px;}
-  /* Eventos */
   .eventos{padding:56px 20px;}
   .evento-card{grid-template-columns:1fr;}
   .evento-img{min-height:200px;}
   .evento-info{padding:28px 24px;}
-  /* Discipulado */
   .discipulado{padding:56px 20px;grid-template-columns:1fr;gap:40px;}
   .disc-levels{grid-template-columns:1fr 1fr;}
-  /* Iglesias */
   .iglesias{padding:56px 20px;}
-  .iglesias-grid{grid-template-columns:1fr;}
-  /* Contribuir */
   .contribuir{padding:48px 20px;flex-direction:column;align-items:flex-start;}
-  /* Footer */
   footer{padding:48px 20px 28px;}
   .footer-main{grid-template-columns:1fr;gap:32px;}
   .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
-  /* Sticky */
   .sticky-give{display:none;}
-  /* Foto-quote */
   .foto-quote-content{padding:40px 24px;}
 }
-@media(min-width:768px){#mobileMenuBtn{display:none!important;}}
 </style>
 </head>
 <body>
@@ -309,17 +303,20 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
     <li><a href="#discipulado">Discipulado</a></li>
     <li><a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" class="nav-cta">Contribuir</a></li>
   </ul>
-  <button id="mobileMenuBtn" aria-label="Menú">
-    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
   </button>
 </nav>
-<div id="mobileMenu">
-  <a href="#vision" onclick="closeMobileMenu()">Visión</a>
-  <a href="#eventos" onclick="closeMobileMenu()">Eventos</a>
-  <a href="#areas" onclick="closeMobileMenu()">Áreas</a>
-  <a href="#iglesias" onclick="closeMobileMenu()">Iglesias</a>
-  <a href="#discipulado" onclick="closeMobileMenu()">Discipulado</a>
-  <a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" onclick="closeMobileMenu()" style="color:var(--terra)!important;">Contribuir</a>
+
+<!-- OVERLAY MENÚ MÓVIL -->
+<div class="nav-overlay" id="navOverlay">
+  <button class="nav-overlay-close" id="navOverlayClose" aria-label="Cerrar">✕</button>
+  <a href="#vision"      onclick="closeNav()">Visión</a>
+  <a href="#eventos"     onclick="closeNav()">Eventos</a>
+  <a href="#areas"       onclick="closeNav()">Áreas</a>
+  <a href="#iglesias"    onclick="closeNav()">Iglesias</a>
+  <a href="#discipulado" onclick="closeNav()">Discipulado</a>
+  <a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" onclick="closeNav()" style="color:var(--terra)!important;">Contribuir</a>
 </div>
 
 <!-- HERO -->
@@ -629,23 +626,16 @@ function openVideo(id,start){
   o.addEventListener('click',e=>{if(e.target===o||e.target.id==='cm')o.remove();});
   document.body.appendChild(o);
 }
-// Mobile menu — botón × se crea al abrir y se elimina al cerrar
-function closeMobileMenu(){
-  document.getElementById('mobileMenu').classList.remove('open');
+// Nav móvil
+function closeNav(){
+  document.getElementById('navOverlay').classList.remove('is-open');
   document.body.style.overflow='';
-  const btn = document.getElementById('mobileClose');
-  if(btn) btn.remove();
 }
-document.getElementById('mobileMenuBtn').addEventListener('click',()=>{
-  document.getElementById('mobileMenu').classList.add('open');
+document.getElementById('navHamburger').addEventListener('click',function(){
+  document.getElementById('navOverlay').classList.add('is-open');
   document.body.style.overflow='hidden';
-  const btn = document.createElement('button');
-  btn.id = 'mobileClose';
-  btn.innerHTML = '✕';
-  btn.style.cssText = 'position:fixed;top:20px;right:20px;font-size:30px;color:rgba(255,255,255,.55);background:none;border:none;cursor:pointer;z-index:520;width:44px;height:44px;display:flex;align-items:center;justify-content:center;line-height:1;';
-  btn.addEventListener('click', closeMobileMenu);
-  document.body.appendChild(btn);
 });
+document.getElementById('navOverlayClose').addEventListener('click',closeNav);
 </script>
 </body>
 </html>
