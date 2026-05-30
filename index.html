@@ -41,7 +41,7 @@ nav.scrolled{background:rgba(24,19,13,.96);box-shadow:0 1px 0 rgba(255,255,255,.
 .hero-script{font-family:'Pinyon Script',cursive;font-size:clamp(60px,8vw,110px);color:rgba(255,255,255,.15);line-height:.85;display:block;margin-bottom:-12px;}
 .hero-title{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(56px,7vw,100px);text-transform:uppercase;letter-spacing:-.02em;color:var(--white);line-height:.9;margin-bottom:24px;}
 .hero-title span{color:var(--terra);}
-.hero-sub{font-family:'Arapey',serif;font-style:italic;font-size:clamp(17px,2vw,22px);color:rgba(255,255,255,.6);margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;line-height:1.6;}
+.hero-sub{font-family:'Arapey',serif;font-style:italic;font-size:clamp(22px,3vw,34px);color:rgba(255,255,255,.85);margin-bottom:48px;max-width:680px;margin-left:auto;margin-right:auto;line-height:1.55;text-align:center;}
 .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 .btn-fill{background:var(--copper);color:var(--white);padding:15px 36px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .2s;}
 .btn-fill:hover{background:var(--copper2);}
@@ -90,6 +90,19 @@ nav.scrolled{background:rgba(24,19,13,.96);box-shadow:0 1px 0 rgba(255,255,255,.
 .vision-top .section-title{color:var(--black);}
 .vision-top .title-script{color:rgba(181,98,42,.5);}
 .vision-body{font-family:'Arapey',serif;font-style:italic;font-size:18px;line-height:1.8;color:var(--warm-gray);max-width:640px;margin:20px auto 0;}
+/* Pastores card unificada */
+.pastores-card{display:flex;gap:48px;align-items:center;max-width:780px;margin:52px auto 0;background:var(--white);padding:40px 48px;border:1px solid var(--cream2);}
+.pastores-photo{flex-shrink:0;width:220px;height:220px;border-radius:50%;overflow:hidden;border:3px solid var(--sand);}
+.pastores-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.pastores-info{flex:1;}
+.pastores-roles{font-family:'Lato',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:6px;}
+.pastores-names{font-family:'Pinyon Script',cursive;font-size:40px;color:var(--copper);line-height:1.1;margin-bottom:14px;}
+.pastores-desc{font-family:'Arapey',serif;font-style:italic;font-size:15px;line-height:1.75;color:var(--warm-gray);}
+@media(max-width:640px){
+  .pastores-card{flex-direction:column;align-items:center;padding:32px 24px;text-align:center;}
+  .pastores-photo{width:180px;height:180px;}
+}
+/* Legacy lider-card por si se usa en otras páginas */
 .lideres-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:52px auto 0;}
 .lider-card{text-align:center;}
 .lider-avatar{width:140px;height:140px;border-radius:50%;background:var(--charcoal);margin:0 auto 20px;border:3px solid var(--sand);overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -141,34 +154,39 @@ nav.scrolled{background:rgba(24,19,13,.96);box-shadow:0 1px 0 rgba(255,255,255,.
 .connect-card:hover .connect-link::after{transform:translateX(4px);}
 
 /* DISCIPULADO */
-.discipulado{background:var(--black);padding:80px 64px;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;}
+.discipulado{background:var(--black);padding:80px 64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
 .disc-eyebrow{color:var(--terra);}
 .disc-title{color:var(--white);}
 .disc-script{color:rgba(181,98,42,.4);}
 .disc-body{font-family:'Arapey',serif;font-style:italic;font-size:16px;line-height:1.85;color:rgba(255,255,255,.45);margin:20px 0 36px;}
+/* Niveles */
+.disc-levels{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);}
+.dlv{background:var(--black);padding:28px 24px;border-left:2px solid transparent;transition:all .2s;cursor:default;}
+.dlv:hover{background:rgba(255,255,255,.03);border-left-color:var(--copper);}
+.dlv-num{font-family:'Pinyon Script',cursive;font-size:38px;color:rgba(181,98,42,.35);line-height:1;}
+.dlv-title{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:4px;}
+.dlv-open .dlv-num{color:rgba(181,98,42,.55);}
+.disc-link{display:inline-block;margin-top:10px;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(181,98,42,.3);padding-bottom:2px;transition:all .2s;}
+.disc-link:hover{border-color:var(--copper);}
+/* Legacy module styles for if used elsewhere */
 .disc-lessons{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);}
 .dl{background:var(--black);padding:20px 18px;border-left:2px solid transparent;transition:all .2s;cursor:pointer;}
 .dl:hover{background:rgba(255,255,255,.03);border-left-color:var(--copper);}
 .dl-num{font-family:'Pinyon Script',cursive;font-size:34px;color:rgba(181,98,42,.25);line-height:1;}
 .dl-title{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:4px;line-height:1.3;}
 
-/* IGLESIAS */
-.iglesias{background:var(--charcoal);padding:80px 64px;}
-.iglesias-top{text-align:center;margin-bottom:52px;}
-.iglesias-top .section-title{color:var(--white);}
-.iglesias-top .title-script{color:rgba(181,98,42,.45);}
-.iglesias-sub{font-family:'Arapey',serif;font-style:italic;font-size:17px;line-height:1.7;color:rgba(255,255,255,.4);max-width:520px;margin:14px auto 0;}
-.iglesias-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.05);}
-.iglesia-card{background:var(--charcoal);padding:32px 28px;border-left:3px solid transparent;transition:all .2s;display:flex;flex-direction:column;justify-content:space-between;min-height:160px;}
-.iglesia-card:hover{background:rgba(255,255,255,.03);border-left-color:var(--copper);}
-.ig-tag{font-size:9px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:8px;}
-.ig-name{font-family:'Lato',sans-serif;font-weight:700;font-size:16px;letter-spacing:.03em;color:var(--white);margin-bottom:6px;line-height:1.25;}
-.ig-addr{font-size:12px;font-weight:300;color:rgba(255,255,255,.35);line-height:1.5;}
-.ig-card-top{margin-bottom:20px;}
-.ig-card-bottom{display:flex;align-items:center;justify-content:space-between;}
-.ig-horario{font-family:'Arapey',serif;font-style:italic;font-size:13px;color:rgba(255,255,255,.3);}
-.ig-link{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(181,98,42,.3);padding-bottom:2px;transition:border-color .2s;white-space:nowrap;}
-.ig-link:hover{border-color:var(--copper);}
+/* IGLESIAS BANNER */
+.iglesias{background:var(--black);padding:0;}
+.iglesias-banner{position:relative;min-height:480px;display:flex;align-items:center;overflow:hidden;}
+.iglesias-banner-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.iglesias-banner-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(24,19,13,.92) 0%,rgba(24,19,13,.7) 55%,rgba(24,19,13,.3) 100%);}
+.iglesias-banner-content{position:relative;z-index:2;padding:72px 64px;max-width:600px;}
+.iglesias-sub{font-family:'Arapey',serif;font-style:italic;font-size:17px;line-height:1.7;color:rgba(255,255,255,.5);max-width:480px;margin-top:14px;}
+@media(max-width:767px){
+  .iglesias-banner{min-height:400px;}
+  .iglesias-banner-content{padding:48px 20px;}
+  .iglesias-banner-overlay{background:rgba(24,19,13,.82);}
+}
 
 /* CONTRIBUIR */
 .contribuir{background:var(--copper);padding:72px 64px;display:flex;align-items:center;justify-content:space-between;gap:48px;}
@@ -182,7 +200,7 @@ nav.scrolled{background:rgba(24,19,13,.96);box-shadow:0 1px 0 rgba(255,255,255,.
 /* FOOTER */
 footer{background:var(--charcoal);padding:64px 64px 36px;}
 .footer-main{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);}
-.footer-brand-name{font-family:'Pinyon Script',cursive;font-size:38px;color:var(--terra);display:block;line-height:1;margin-bottom:4px;}
+.footer-brand-name{font-family:'Pinyon Script',cursive;font-size:30px;color:var(--terra);display:block;line-height:1;margin-bottom:4px;}
 .footer-brand-sub{font-family:'Lato',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);display:block;margin-bottom:14px;}
 .footer-tagline{font-size:13px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.28);margin-bottom:22px;}
 .footer-socials{display:flex;gap:10px;}
@@ -202,15 +220,15 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
 .sticky-give:hover{background:var(--copper2);}
 
 /* WHATSAPP */
-.whatsapp-fab{position:fixed;bottom:32px;left:32px;z-index:400;display:flex;flex-direction:column;align-items:flex-start;gap:10px;}
-.whatsapp-bubble{background:var(--charcoal);border:1px solid rgba(255,255,255,.1);border-radius:12px 12px 12px 0;padding:12px 16px;max-width:220px;opacity:0;transform:translateX(-8px);transition:all .3s;pointer-events:none;}
-.whatsapp-bubble.show{opacity:1;transform:translateX(0);}
-.whatsapp-bubble p{font-family:'Arapey',serif;font-style:italic;font-size:13px;line-height:1.55;color:rgba(255,255,255,.7);}
-.whatsapp-bubble span{font-family:'Lato',sans-serif;font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);display:block;margin-top:5px;}
-.whatsapp-btn{width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.35);cursor:pointer;border:none;outline:none;transition:transform .2s,box-shadow .2s;text-decoration:none;}
-.whatsapp-btn:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,.5);}
-.whatsapp-btn svg{width:30px;height:30px;fill:var(--white);}
+.whatsapp-fab{position:fixed;bottom:28px;right:28px;z-index:400;display:flex;flex-direction:column-reverse;align-items:flex-end;gap:10px;}
+.whatsapp-bubble{background:var(--charcoal);border:1px solid rgba(255,255,255,.1);border-radius:12px 12px 0 12px;padding:10px 14px;max-width:190px;opacity:0;transform:translateY(6px);transition:all .2s;pointer-events:none;}
+.whatsapp-fab:hover .whatsapp-bubble{opacity:1;transform:translateY(0);pointer-events:auto;}
+.whatsapp-bubble p{font-family:'Arapey',serif;font-style:italic;font-size:12px;line-height:1.5;color:rgba(255,255,255,.65);}
+.whatsapp-btn{width:50px;height:50px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(37,211,102,.3);cursor:pointer;border:none;outline:none;transition:transform .2s,box-shadow .2s;text-decoration:none;flex-shrink:0;}
+.whatsapp-btn:hover{transform:scale(1.08);box-shadow:0 5px 20px rgba(37,211,102,.45);}
+.whatsapp-btn svg{width:26px;height:26px;fill:var(--white);}
 /* MOBILE */
+/* Close btn — creado por JS, no existe en el DOM hasta que se abre el menú */
 @media(max-width:767px){
   nav{padding:0 16px;}
   .nav-links{display:none;}
@@ -220,7 +238,35 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
   #mobileMenu.open{display:flex;}
   #mobileMenu a{font-size:22px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;}
   #mobileMenu a:hover{color:var(--terra);}
-  #mobileMenu .close-btn{position:absolute;top:24px;right:24px;font-size:28px;color:rgba(255,255,255,.4);cursor:pointer;background:none;border:none;}
+  /* Vision/pastores */
+  .vision{padding:56px 20px;}
+  .pastores-card{flex-direction:column;align-items:center;padding:28px 20px;text-align:center;gap:24px;}
+  .pastores-photo{width:160px;height:160px;}
+  /* Videos */
+  .videos{padding:48px 20px;}
+  .video-grid{grid-template-columns:1fr;}
+  .videos-top{flex-direction:column;align-items:flex-start;gap:16px;}
+  /* Eventos */
+  .eventos{padding:56px 20px;}
+  .evento-card{grid-template-columns:1fr;}
+  .evento-img{min-height:200px;}
+  .evento-info{padding:28px 24px;}
+  /* Discipulado */
+  .discipulado{padding:56px 20px;grid-template-columns:1fr;gap:40px;}
+  .disc-levels{grid-template-columns:1fr 1fr;}
+  /* Iglesias */
+  .iglesias{padding:56px 20px;}
+  .iglesias-grid{grid-template-columns:1fr;}
+  /* Contribuir */
+  .contribuir{padding:48px 20px;flex-direction:column;align-items:flex-start;}
+  /* Footer */
+  footer{padding:48px 20px 28px;}
+  .footer-main{grid-template-columns:1fr;gap:32px;}
+  .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
+  /* Sticky */
+  .sticky-give{display:none;}
+  /* Foto-quote */
+  .foto-quote-content{padding:40px 24px;}
 }
 @media(min-width:768px){#mobileMenuBtn{display:none!important;}}
 </style>
@@ -228,19 +274,18 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
 <body>
 
 <!-- STICKY CONTRIBUIR -->
-<a href="https://www.mercadopago.com.ar" target="_blank" rel="noopener" class="sticky-give" id="stickyGive">
+<a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" rel="noopener" class="sticky-give" id="stickyGive">
   Contribuir
 </a>
 
 <!-- WHATSAPP -->
 <div class="whatsapp-fab" id="waFab">
-  <div class="whatsapp-bubble" id="waBubble">
-    <p>¡Hola! Estamos acá para lo que necesites. Escribinos cuando quieras 🙏</p>
-    <span>Ministerio Cristo Reina</span>
-  </div>
   <a href="https://wa.me/5491100000000?text=Hola%2C%20me%20comunico%20desde%20la%20p%C3%A1gina%20del%20Ministerio%20Cristo%20Reina%20%F0%9F%99%8F" target="_blank" rel="noopener" class="whatsapp-btn" id="waBtn" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
+  <div class="whatsapp-bubble" id="waBubble">
+    <p>¿Consultás algo? Escribinos 🙏</p>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -253,7 +298,7 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
     </svg>
     <div>
       <span class="logo-name">Cristo Reina</span>
-      <span class="logo-tagline">Buenos Aires</span>
+      <span class="logo-tagline">Ministerio</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -262,20 +307,19 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
     <li><a href="#areas">Áreas</a></li>
     <li><a href="#iglesias">Iglesias</a></li>
     <li><a href="#discipulado">Discipulado</a></li>
-    <li><a href="https://www.mercadopago.com.ar" target="_blank" class="nav-cta">Contribuir</a></li>
+    <li><a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" class="nav-cta">Contribuir</a></li>
   </ul>
   <button id="mobileMenuBtn" aria-label="Menú">
     <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
 <div id="mobileMenu">
-  <button class="close-btn" id="mobileClose">✕</button>
   <a href="#vision" onclick="closeMobileMenu()">Visión</a>
   <a href="#eventos" onclick="closeMobileMenu()">Eventos</a>
   <a href="#areas" onclick="closeMobileMenu()">Áreas</a>
   <a href="#iglesias" onclick="closeMobileMenu()">Iglesias</a>
   <a href="#discipulado" onclick="closeMobileMenu()">Discipulado</a>
-  <a href="https://www.mercadopago.com.ar" target="_blank" style="color:var(--terra)!important;">Contribuir</a>
+  <a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" onclick="closeMobileMenu()" style="color:var(--terra)!important;">Contribuir</a>
 </div>
 
 <!-- HERO -->
@@ -288,15 +332,39 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="hero-script">Hijos del Reino</span>
-    <h1 class="hero-title">Cristo<br><span>Reina</span></h1>
-    <p class="hero-sub">Un lugar donde el evangelio transforma vidas. La iglesia no es un lugar al que asistimos, es una familia a la que pertenecemos.</p>
+    <p class="hero-sub">Un lugar donde el evangelio transforma vidas.<br>La iglesia no es un lugar al que asistimos,<br>es una familia a la que pertenecemos.</p>
     <div class="hero-btns">
       <a href="#areas" class="btn-fill">Sumate esta semana</a>
       <a href="#videos" class="btn-border">Ver mensajes</a>
     </div>
   </div>
   <div class="hero-scroll-hint"><span>Explorá</span><div class="scroll-arrow"></div></div>
+</section>
+
+<!-- EVENTOS -->
+<section class="eventos" id="eventos">
+  <div class="eventos-top">
+    <div>
+      <span class="eyebrow">Agenda</span>
+      <span class="title-script">Próximos</span>
+      <h2 class="section-title">Eventos</h2>
+    </div>
+    <a href="https://ministeriocristoreina.my.canva.site/" target="_blank" rel="noopener" class="ghost-link">Ver todos →</a>
+  </div>
+  <a href="https://ministeriocristoreina.my.canva.site/" target="_blank" rel="noopener" class="evento-card">
+    <div class="evento-img"><img src="assets/images/events/evento-ascenso.jpg" alt="Congreso Ascenso 2026"></div>
+    <div class="evento-info">
+      <span class="evento-tag">Congreso Cristo Reina 2026</span>
+      <h3 class="evento-name">ASCENSO</h3>
+      <p class="evento-sub">Diseñados para las Alturas</p>
+      <div class="evento-details">
+        <p>📅 17 y 18 de Julio de 2026</p>
+        <p>📍 Hotel Sheraton · Tucumán</p>
+        <p class="alert">¡Inscripciones abiertas! · Cupos limitados</p>
+      </div>
+      <span class="btn-fill" style="width:fit-content;">Inscribirme ahora →</span>
+    </div>
+  </a>
 </section>
 
 <!-- VIDEOS -->
@@ -363,48 +431,16 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
     <h2 class="section-title" style="color:var(--black);">Visión</h2>
     <p class="vision-body">Anhelamos ser una iglesia donde las personas sean formadas como verdaderos hijos del Reino de Dios, que conozcan al Padre, caminen en la vida del Espíritu y reflejen el carácter de Cristo en todas las áreas de su vida.</p>
   </div>
-  <div class="lideres-grid" style="grid-template-columns:1fr 1fr;max-width:640px;">
-    <div class="lider-card">
-      <div class="lider-avatar"></div>
-      <p class="lider-role">Apóstol · Pastor Principal</p>
-      <p class="lider-name">Fernando Aragón</p>
-      <p style="font-family:'Arapey',serif;font-style:italic;font-size:14px;line-height:1.65;color:var(--warm-gray);margin-top:10px;max-width:260px;margin-left:auto;margin-right:auto;">Fundador del Ministerio Cristo Reina. Apóstol con un llamado a las naciones, con un corazón pastoral y una visión de levantar hijos del Reino en toda la tierra.</p>
-      <a href="#" style="display:inline-block;margin-top:14px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(181,98,42,.3);padding-bottom:2px;">Saber más</a>
+  <div class="pastores-card">
+    <div class="pastores-photo">
+      <img src="assets/images/PASTORES.jpg" alt="Pastores Fernando Aragón y María Páez">
     </div>
-    <div class="lider-card">
-      <div class="lider-avatar"></div>
-      <p class="lider-role">Profesora · Líder Principal</p>
-      <p class="lider-name">María Páez</p>
-      <p style="font-family:'Arapey',serif;font-style:italic;font-size:14px;line-height:1.65;color:var(--warm-gray);margin-top:10px;max-width:260px;margin-left:auto;margin-right:auto;">Líder del ministerio con un fuerte llamado a la enseñanza, la intercesión y el despertar profético. Su vida es un testimonio de la gracia de Dios y el poder transformador del Espíritu Santo.</p>
-      <a href="#" style="display:inline-block;margin-top:14px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--copper);text-decoration:none;border-bottom:1px solid rgba(181,98,42,.3);padding-bottom:2px;">Saber más</a>
+    <div class="pastores-info">
+      <p class="pastores-roles">Pastores · Fundadores del Ministerio</p>
+      <p class="pastores-names">Fernando Aragón<br>&amp; María Páez</p>
+      <p class="pastores-desc">Fundadores del Ministerio Cristo Reina. Fernando, apóstol con un llamado a las naciones, con un corazón pastoral y una visión de levantar hijos del Reino en toda la tierra. María, con un fuerte llamado a la enseñanza, la intercesión y el despertar profético. Juntos conducen el ministerio con gracia, autoridad espiritual y amor por el pueblo de Dios.</p>
     </div>
   </div>
-</section>
-
-<!-- EVENTOS -->
-<section class="eventos" id="eventos">
-  <div class="eventos-top">
-    <div>
-      <span class="eyebrow">Agenda</span>
-      <span class="title-script">Próximos</span>
-      <h2 class="section-title">Eventos</h2>
-    </div>
-    <a href="https://ministeriocristoreina.my.canva.site/" target="_blank" rel="noopener" class="ghost-link">Ver todos →</a>
-  </div>
-  <a href="https://ministeriocristoreina.my.canva.site/" target="_blank" rel="noopener" class="evento-card">
-    <div class="evento-img"><img src="assets/images/events/evento-ascenso.jpg" alt="Congreso Ascenso 2026"></div>
-    <div class="evento-info">
-      <span class="evento-tag">Congreso Cristo Reina 2026</span>
-      <h3 class="evento-name">ASCENSO</h3>
-      <p class="evento-sub">Diseñados para las Alturas</p>
-      <div class="evento-details">
-        <p>📅 17 y 18 de Julio de 2026</p>
-        <p>📍 Hotel Sheraton · Tucumán</p>
-        <p class="alert">¡Inscripciones abiertas! · Cupos limitados</p>
-      </div>
-      <span class="btn-fill" style="width:fit-content;">Inscribirme ahora →</span>
-    </div>
-  </a>
 </section>
 
 <!-- ÁREAS -->
@@ -446,7 +482,7 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
       </div>
     </a>
     <a href="pages/mujeres.html" class="connect-card">
-      <img class="card-img" src="assets/images/mujeres/DSC06857.jpg" alt="Cristo Reina Mujeres">
+      <img class="card-img" src="assets/images/mujeres/DSC06940.jpg" alt="Cristo Reina Mujeres">
       <div class="card-overlay"></div>
       <div class="card-content">
         <span class="card-tag">Ministerio Cristo Reina</span>
@@ -483,38 +519,42 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
   <div>
     <span class="eyebrow disc-eyebrow">Formación</span>
     <span class="title-script disc-script">Hijos del</span>
-    <h2 class="section-title disc-title">Reino · Niv. 1</h2>
-    <p class="disc-body">"Jesús no solo llamó personas a creer en Él; llamó personas a seguirle." Un proceso de 9 lecciones para crecer como discípulo.</p>
+    <h2 class="section-title disc-title">Reino</h2>
+    <p class="disc-body">"Jesús no solo llamó personas a creer en Él; llamó personas a seguirle." Un proceso de formación para crecer como verdadero discípulo del Reino.</p>
     <a href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20inscribirme%20al%20discipulado%20Hijos%20del%20Reino" target="_blank" class="btn-fill">Inscribirme</a>
   </div>
-  <div class="disc-lessons">
-    <div class="dl"><p class="dl-num">1</p><p class="dl-title">De Creación a Hijos</p></div>
-    <div class="dl"><p class="dl-num">2</p><p class="dl-title">Una Nueva Identidad</p></div>
-    <div class="dl"><p class="dl-num">3</p><p class="dl-title">La Buena Semilla</p></div>
-    <div class="dl"><p class="dl-num">4</p><p class="dl-title">Libres de la Orfandad</p></div>
-    <div class="dl"><p class="dl-num">5</p><p class="dl-title">Ataques del Enemigo I</p></div>
-    <div class="dl"><p class="dl-num">6</p><p class="dl-title">Ataques del Enemigo II</p></div>
-    <div class="dl"><p class="dl-num">7</p><p class="dl-title">Ataques del Enemigo III</p></div>
-    <div class="dl"><p class="dl-num">8</p><p class="dl-title">Cultura del Reino</p></div>
-    <div class="dl"><p class="dl-num">9</p><p class="dl-title">El Bautismo en Aguas</p></div>
+  <div class="disc-levels">
+    <div class="dlv">
+      <p class="dlv-num">Niv. 1</p>
+    </div>
+    <div class="dlv">
+      <p class="dlv-num">Niv. 2</p>
+    </div>
+    <div class="dlv">
+      <p class="dlv-num">Niv. 3</p>
+    </div>
+    <div class="dlv dlv-open">
+      <p class="dlv-num">+</p>
+      <p class="dlv-title">Otros cursos</p>
+      <a href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20enterarme%20de%20otros%20cursos" target="_blank" class="disc-link">Enterarme →</a>
+    </div>
   </div>
 </section>
 
 <!-- IGLESIAS -->
 <section class="iglesias" id="iglesias">
-  <div class="iglesias-top">
-    <span class="eyebrow">Red Cristo Reina</span>
-    <span class="title-script">Iglesias</span>
-    <h2 class="section-title">Hijas &amp; Anexos</h2>
-    <p class="iglesias-sub">Cristo Reina se multiplica. Encontrá la iglesia más cerca de vos.</p>
-  </div>
-  <div class="iglesias-grid" style="margin-top:48px;">
-    <div class="iglesia-card"><div class="ig-card-top"><span class="ig-tag">Buenos Aires · CABA</span><h3 class="ig-name">Cristo Reina Sede Central</h3><p class="ig-addr">📍 Av. Corrientes 1234, CABA</p></div><div class="ig-card-bottom"><p class="ig-horario">Dom 10:00 · Dom 17:00</p><a href="https://maps.google.com/?q=Av.+Corrientes+1234+Buenos+Aires" target="_blank" class="ig-link">Ver en mapa →</a></div></div>
-    <div class="iglesia-card"><div class="ig-card-top"><span class="ig-tag">Buenos Aires · GBA Norte</span><h3 class="ig-name">Cristo Reina Zona Norte</h3><p class="ig-addr">📍 San Martín, Buenos Aires</p></div><div class="ig-card-bottom"><p class="ig-horario">Sáb 18:00 · Dom 10:00</p><a href="https://maps.google.com/?q=San+Martin+Buenos+Aires" target="_blank" class="ig-link">Ver en mapa →</a></div></div>
-    <div class="iglesia-card"><div class="ig-card-top"><span class="ig-tag">Buenos Aires · GBA Sur</span><h3 class="ig-name">Cristo Reina Zona Sur</h3><p class="ig-addr">📍 Lomas de Zamora, Buenos Aires</p></div><div class="ig-card-bottom"><p class="ig-horario">Dom 10:00 · Dom 18:00</p><a href="https://maps.google.com/?q=Lomas+de+Zamora+Buenos+Aires" target="_blank" class="ig-link">Ver en mapa →</a></div></div>
-    <div class="iglesia-card"><div class="ig-card-top"><span class="ig-tag">Interior · Córdoba</span><h3 class="ig-name">Cristo Reina Córdoba</h3><p class="ig-addr">📍 Córdoba Capital</p></div><div class="ig-card-bottom"><p class="ig-horario">Dom 10:00</p><a href="https://maps.google.com/?q=Cordoba+Capital+Argentina" target="_blank" class="ig-link">Ver en mapa →</a></div></div>
-    <div class="iglesia-card"><div class="ig-card-top"><span class="ig-tag">Interior · Tucumán</span><h3 class="ig-name">Cristo Reina Tucumán</h3><p class="ig-addr">📍 San Miguel de Tucumán</p></div><div class="ig-card-bottom"><p class="ig-horario">Sáb 18:00 · Dom 10:00</p><a href="https://maps.google.com/?q=San+Miguel+de+Tucuman" target="_blank" class="ig-link">Ver en mapa →</a></div></div>
-    <div class="iglesia-card" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:40px 28px;text-align:center;"><div style="width:44px;height:44px;border:1.5px solid rgba(181,98,42,.4);display:flex;align-items:center;justify-content:center;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--copper);fill:none;stroke-width:1.5;stroke-linecap:round;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div><p style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);">¿Tenés una iglesia hija aquí?</p><a href="#" class="ig-link">Contactanos</a></div>
+  <div class="iglesias-banner">
+    <img src="assets/images/fund/IMG24_red.jpg" alt="Red Cristo Reina" class="iglesias-banner-img">
+    <div class="iglesias-banner-overlay"></div>
+    <div class="iglesias-banner-content">
+      <span class="eyebrow" style="color:var(--terra);">Red Cristo Reina</span>
+      <span class="title-script" style="color:rgba(255,255,255,.25);display:block;line-height:.85;margin-bottom:-6px;">Iglesias</span>
+      <h2 class="section-title">Hijas &amp; Obras Apostólicas</h2>
+      <p class="iglesias-sub">Cristo Reina se multiplica. Obras apostólicas, iglesias hijas y una red que llega a todo el país y más allá.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;">
+        <a href="pages/red.html" class="btn-fill">Conocé toda la red →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -524,11 +564,12 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
     <span class="col-eyebrow">Colaborá con el ministerio</span>
     <span class="col-script">Que llegue</span>
     <h2 class="col-title">El Evangelio</h2>
-    <p class="col-body">Gracias a tu aporte, personas en todo el mundo conocen a Dios y reciben asistencia social. Podés dar por Mercado Pago o escaneando el QR.</p>
-    <div style="margin-top:24px;padding:20px;background:rgba(255,255,255,.12);display:inline-flex;flex-direction:column;gap:6px;">
-      <span style="font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5);">Alias Mercado Pago</span>
-      <span style="font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(14px,2.5vw,20px);color:var(--white);letter-spacing:.04em;">VIDAALAFAMILIA.MCR</span>
-      <span style="font-size:11px;font-weight:300;color:rgba(255,255,255,.45);">Titular: Fundación Vida a la Familia</span>
+    <p class="col-body">Gracias a tu aporte, personas en todo el mundo conocen a Dios y reciben asistencia social. Tu ofrenda hace posible que el Reino llegue más lejos.</p>
+    <div style="margin-top:32px;display:flex;flex-direction:column;gap:14px;align-items:flex-start;">
+      <a href="https://link.mercadopago.com.ar/fundacionvidaalafamilia" target="_blank" rel="noopener" class="btn-white">
+        Contribuir
+      </a>
+      <p style="font-size:11px;font-weight:300;color:rgba(255,255,255,.5);font-style:italic;">Alias: <strong style="color:rgba(255,255,255,.75);font-style:normal;">VIDAALAFAMILIA.MCR</strong> · Titular: Fundación Vida a la Familia</p>
     </div>
   </div>
   <div style="display:flex;flex-direction:column;align-items:center;gap:16px;flex-shrink:0;">
@@ -541,8 +582,8 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
 <footer>
   <div class="footer-main">
     <div>
-      <span class="footer-brand-name">Cristo Reina</span>
-      <span class="footer-brand-sub">Ministerio · Buenos Aires</span>
+      <span class="footer-brand-name">Ministerio Cristo Reina</span>
+      <span class="footer-brand-sub">Ministerio · Argentina</span>
       <p class="footer-tagline">Un lugar donde el evangelio transforma vidas, familias y comunidades. Hijos del Reino.</p>
       <div class="footer-socials">
         <a href="#" aria-label="Facebook">f</a>
@@ -572,15 +613,11 @@ footer{background:var(--charcoal);padding:64px 64px 36px;}
 <script>
 const nav=document.getElementById('mainNav');
 const sticky=document.getElementById('stickyGive');
-const waBubble=document.getElementById('waBubble');
-const waBtn=document.getElementById('waBtn');
 window.addEventListener('scroll',()=>{
   const y=window.scrollY;
   nav.classList.toggle('scrolled',y>60);
   sticky.classList.toggle('visible',y>window.innerHeight*.6);
 });
-setTimeout(()=>{waBubble.classList.add('show');},3500);
-waBtn.addEventListener('click',()=>{waBubble.classList.remove('show');});
 document.getElementById('heroVideo').addEventListener('canplay',function(){
   document.getElementById('heroThumb').classList.add('hidden');
 });
@@ -592,10 +629,23 @@ function openVideo(id,start){
   o.addEventListener('click',e=>{if(e.target===o||e.target.id==='cm')o.remove();});
   document.body.appendChild(o);
 }
-// Mobile menu
-document.getElementById('mobileMenuBtn').addEventListener('click',()=>{document.getElementById('mobileMenu').classList.add('open');document.body.style.overflow='hidden';});
-function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
-document.getElementById('mobileClose').addEventListener('click',closeMobileMenu);
+// Mobile menu — botón × se crea al abrir y se elimina al cerrar
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow='';
+  const btn = document.getElementById('mobileClose');
+  if(btn) btn.remove();
+}
+document.getElementById('mobileMenuBtn').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.add('open');
+  document.body.style.overflow='hidden';
+  const btn = document.createElement('button');
+  btn.id = 'mobileClose';
+  btn.innerHTML = '✕';
+  btn.style.cssText = 'position:fixed;top:20px;right:20px;font-size:30px;color:rgba(255,255,255,.55);background:none;border:none;cursor:pointer;z-index:520;width:44px;height:44px;display:flex;align-items:center;justify-content:center;line-height:1;';
+  btn.addEventListener('click', closeMobileMenu);
+  document.body.appendChild(btn);
+});
 </script>
 </body>
 </html>
