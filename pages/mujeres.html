@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristo Reina Mujeres · Mujeres Proféticas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Arapey:ital@0;1&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--ivory:#F7F1E8;--cream:#EDE3CE;--cream2:#D9CCAF;--sand:#C2A880;--copper:#B5622A;--copper2:#8E4518;--terra:#D4784A;--warm-gray:#7A7065;--charcoal:#2E2820;--black:#18130D;--white:#FEFCF7;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lato',sans-serif;background:var(--white);color:var(--charcoal);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(24,19,13,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-name{font-family:'Lato',sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--white);line-height:1.1;}
+.logo-tagline{font-family:'Arapey',serif;font-style:italic;font-size:11px;color:var(--terra);display:block;margin-top:1px;}
+.nav-back{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s;}
+.nav-back:hover{color:var(--terra);}
+.nav-back svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.eyebrow{font-size:9px;font-weight:700;letter-spacing:.4em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:12px;}
+.hero{position:relative;height:100vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(.45);}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(24,19,13,.95) 0%,rgba(24,19,13,.2) 60%,transparent 100%);}
+.hero-content{position:relative;z-index:2;padding:0 24px 56px;width:100%;}
+.hero-script{font-family:'Pinyon Script',cursive;font-size:clamp(52px,10vw,100px);color:rgba(255,255,255,.18);line-height:.82;display:block;margin-bottom:-6px;}
+.hero-title{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(44px,9vw,84px);text-transform:uppercase;letter-spacing:-.02em;color:var(--white);line-height:.88;margin-bottom:20px;}
+.hero-title span{color:var(--terra);}
+.hero-desc{font-family:'Arapey',serif;font-style:italic;font-size:clamp(16px,3.5vw,19px);line-height:1.7;color:rgba(255,255,255,.6);max-width:540px;margin-bottom:32px;}
+.btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-fill{background:var(--copper);color:var(--white);padding:14px 28px;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:background .2s;}
+.btn-fill:hover{background:var(--copper2);}
+.btn-border{border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);padding:13px 24px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .2s;}
+.btn-border:hover{border-color:var(--terra);color:var(--terra);}
+.stats-bar{background:var(--copper);display:flex;}
+.stat{flex:1;text-align:center;padding:22px 8px;border-right:1px solid rgba(255,255,255,.2);}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(18px,4vw,34px);color:var(--white);letter-spacing:-.03em;line-height:1;}
+.stat-label{font-size:9px;font-weight:300;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-top:3px;}
+
+/* EVENTO HIGHLIGHT */
+.evento{background:var(--black);display:flex;flex-direction:column;}
+@media(min-width:768px){.evento{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}}
+.evento-imgs{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:2px;min-height:280px;}
+.ei{overflow:hidden;position:relative;}
+.ei img{width:100%;height:100%;object-fit:cover;filter:brightness(.75);transition:transform .5s,filter .3s;}
+.ei:hover img{transform:scale(1.05);filter:brightness(.95);}
+.ei.span2{grid-column:span 2;}
+.evento-badge{position:absolute;top:14px;left:14px;background:var(--copper);padding:6px 14px;font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--white);z-index:2;}
+.evento-info{padding:48px 24px;display:flex;flex-direction:column;justify-content:center;}
+@media(min-width:768px){.evento-info{padding:64px;}}
+.ev-script{font-family:'Pinyon Script',cursive;font-size:clamp(50px,8vw,80px);color:rgba(181,98,42,.35);line-height:.82;display:block;margin-bottom:-4px;}
+.ev-title{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(32px,6vw,54px);text-transform:uppercase;letter-spacing:-.02em;color:var(--white);line-height:.9;margin-bottom:8px;}
+.ev-subtitle{font-family:'Arapey',serif;font-style:italic;font-size:18px;color:var(--sand);margin-bottom:20px;}
+.ev-body{font-family:'Arapey',serif;font-style:italic;font-size:16px;line-height:1.85;color:rgba(255,255,255,.5);margin-bottom:24px;}
+.ev-data{display:flex;flex-direction:column;gap:7px;padding:18px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:32px;}
+.ev-data p{font-size:13px;color:rgba(255,255,255,.6);}
+.ev-data strong{color:var(--terra);}
+
+/* MISIÓN */
+.mision{background:var(--ivory);padding:60px 24px;}
+@media(min-width:768px){.mision{padding:80px 64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}}
+.m-script{font-family:'Pinyon Script',cursive;font-size:52px;color:rgba(181,98,42,.4);line-height:.85;display:block;margin-bottom:-4px;}
+.m-heading{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(32px,5vw,48px);text-transform:uppercase;letter-spacing:-.01em;color:var(--black);margin-bottom:20px;}
+.m-body{font-family:'Arapey',serif;font-style:italic;font-size:16px;line-height:1.85;color:var(--warm-gray);margin-bottom:24px;}
+.m-list{list-style:none;margin-bottom:32px;}
+.m-list li{font-size:14px;padding:10px 0 10px 20px;border-bottom:1px solid var(--cream2);position:relative;line-height:1.5;color:var(--charcoal);}
+.m-list li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;background:var(--copper);border-radius:50%;}
+.m-list li:last-child{border-bottom:none;}
+.m-photos{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:32px;}
+@media(min-width:768px){.m-photos{margin-top:0;}}
+.m-photos img{width:100%;aspect-ratio:1;object-fit:cover;transition:transform .3s;}
+.m-photos img:first-child{grid-column:span 2;aspect-ratio:16/9;}
+.m-photos img:hover{transform:scale(1.02);}
+
+/* QUOTE */
+.quote-band{background:var(--charcoal);padding:56px 24px;text-align:center;position:relative;overflow:hidden;}
+.quote-band::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 48px,rgba(181,98,42,.04) 48px,rgba(181,98,42,.04) 50px);}
+.quote-band blockquote{font-family:'Pinyon Script',cursive;font-size:clamp(40px,7vw,76px);color:rgba(255,255,255,.65);line-height:1.05;margin-bottom:12px;position:relative;z-index:1;}
+.quote-band cite{font-size:10px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--terra);font-style:normal;position:relative;z-index:1;}
+
+/* GALERÍA */
+.galeria{background:var(--black);padding:60px 24px;}
+@media(min-width:768px){.galeria{padding:80px 64px;}}
+.g-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;}
+.section-title{font-family:'Lato',sans-serif;font-weight:900;font-size:clamp(32px,5vw,48px);text-transform:uppercase;letter-spacing:-.01em;color:var(--white);line-height:.95;}
+.title-script{font-family:'Pinyon Script',cursive;font-size:clamp(40px,6vw,60px);color:rgba(181,98,42,.4);display:block;line-height:.85;margin-bottom:-5px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3px;}
+@media(min-width:600px){.gallery-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:900px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
+.g-cell{overflow:hidden;cursor:pointer;position:relative;aspect-ratio:1;}
+.g-cell.wide{grid-column:span 2;aspect-ratio:2/1;}
+.g-cell img{width:100%;height:100%;object-fit:cover;transition:transform .4s,filter .3s;filter:brightness(.82);display:block;}
+.g-cell:hover img{transform:scale(1.05);filter:brightness(1);}
+.g-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s;}
+.g-cell:hover .g-overlay{background:rgba(181,98,42,.15);}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.94);align-items:center;justify-content:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:92vw;max-height:86vh;object-fit:contain;}
+.lb-close{position:fixed;top:16px;right:20px;font-size:26px;color:rgba(255,255,255,.5);cursor:pointer;z-index:10000;}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.6);font-size:28px;padding:14px 18px;cursor:pointer;z-index:10000;}
+.lb-prev{left:8px;}.lb-next{right:8px;}
+.lb-counter{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:rgba(255,255,255,.3);z-index:10000;}
+
+/* CTA */
+.cta{background:var(--ivory);padding:56px 24px;display:flex;flex-direction:column;gap:24px;}
+@media(min-width:768px){.cta{flex-direction:row;align-items:center;justify-content:space-between;padding:64px;gap:48px;}}
+.cta-title{font-family:'Pinyon Script',cursive;font-size:48px;color:var(--copper);line-height:.9;margin-bottom:8px;}
+.cta-heading{font-family:'Lato',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;color:var(--black);margin-bottom:10px;}
+.cta-body{font-size:14px;font-weight:300;line-height:1.7;color:var(--warm-gray);max-width:400px;}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:var(--white);padding:14px 24px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;white-space:nowrap;}
+.btn-wa svg{width:20px;height:20px;fill:var(--white);flex-shrink:0;}
+
+footer{background:var(--charcoal);padding:28px 24px;display:flex;align-items:center;justify-content:space-between;}
+.footer-copy{font-size:11px;font-weight:300;color:rgba(255,255,255,.2);}
+.footer-back{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--terra);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="rgba(181,98,42,0.15)" stroke="rgba(181,98,42,0.4)" stroke-width="1.2"/><path d="M8 30 L11 17 L18 24 L22 12 L26 24 L33 17 L36 30 Z" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/><path d="M8 30 Q22 33 36 30" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/></svg>
+    <div><span class="logo-name">Cristo Reina</span><span class="logo-tagline">Mujeres</span></div>
+  </a>
+  <a href="../index.html" class="nav-back"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>Inicio</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-bg"><img src="../assets/images/mujeres/DSC06857.jpg" alt="Cristo Reina Mujeres Proféticas"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Ministerio Cristo Reina</span>
+    <span class="hero-script">Mujeres</span>
+    <h1 class="hero-title">Proféticas<br><span>del Reino</span></h1>
+    <p class="hero-desc">Mujeres que oran, declaran y creen. Una comunidad de fe femenina que entiende su identidad, su voz y su llamado en el Reino de Dios.</p>
+    <div class="btns">
+      <a href="#evento" class="btn-fill">Ver el evento</a>
+      <a href="#galeria" class="btn-border">Ver galería</a>
+    </div>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><p class="stat-num">2026</p><p class="stat-label">Mujeres Proféticas</p></div>
+  <div class="stat"><p class="stat-num">Fe</p><p class="stat-label">Identidad · Llamado</p></div>
+  <div class="stat"><p class="stat-num">54</p><p class="stat-label">Fotos del evento</p></div>
+  <div class="stat"><p class="stat-num">100%</p><p class="stat-label">Fuego del Espíritu</p></div>
+</div>
+
+<div class="evento" id="evento">
+  <div class="evento-imgs">
+    <span class="evento-badge">Último evento</span>
+    <div class="ei span2"><img src="../assets/images/mujeres/DSC06903.jpg" alt="Mujeres Proféticas"></div>
+    <div class="ei"><img src="../assets/images/mujeres/DSC06871.jpg" alt="Mujeres Proféticas"></div>
+    <div class="ei"><img src="../assets/images/mujeres/DSC06940.jpg" alt="Mujeres Proféticas"></div>
+  </div>
+  <div class="evento-info">
+    <span class="eyebrow">Evento especial · 2026</span>
+    <span class="ev-script">Mujeres</span>
+    <h2 class="ev-title">Proféticas</h2>
+    <p class="ev-subtitle">Cristo Reina · Buenos Aires</p>
+    <p class="ev-body">Un encuentro diseñado para las mujeres del ministerio, donde la adoración, la profecía y la Palabra de Dios se unieron para despertar el llamado que hay en cada una. Una noche que marcó vidas para siempre.</p>
+    <p class="ev-body" style="margin-top:-12px;">Mujeres de todas las edades reunidas para declarar quiénes son en Cristo. Voces proféticas, momentos de restauración y una comunidad de hermanas que se fortalecen mutuamente en la fe.</p>
+    <div class="ev-data">
+      <p>🔥 <strong>Tema:</strong> Identidad profética de la mujer del Reino</p>
+      <p>📍 <strong>Ministerio Cristo Reina</strong> · Buenos Aires</p>
+    </div>
+    <a href="https://wa.me/5491100000000?text=Hola%2C+quiero+info+sobre+el+pr%C3%B3ximo+evento+de+Mujeres+Prof%C3%A9ticas" target="_blank" class="btn-fill">Quiero ir al próximo →</a>
+  </div>
+</div>
+
+<div class="mision">
+  <div>
+    <span class="eyebrow">Cristo Reina Mujeres</span>
+    <span class="m-script">Una</span>
+    <h2 class="m-heading">Comunidad<br>Profética</h2>
+    <p class="m-body">Cada mujer en Cristo tiene una voz, un llamado y un propósito eterno. Cristo Reina Mujeres es un espacio donde la identidad bíblica de la mujer se afirma, su fe crece y su voz es escuchada.</p>
+    <ul class="m-list">
+      <li>Encuentros de adoración y enseñanza bíblica para mujeres</li>
+      <li>Grupos de comunidad y oración</li>
+      <li>Eventos especiales y retiros anuales</li>
+      <li>Formación en identidad, propósito y ministerio femenino</li>
+      <li>Una hermandad que te acompaña en cada etapa de vida</li>
+    </ul>
+    <a href="https://wa.me/5491100000000?text=Hola%2C+quiero+info+sobre+Cristo+Reina+Mujeres" target="_blank" class="btn-fill">Quiero saber más</a>
+  </div>
+  <div class="m-photos">
+    <img src="../assets/images/mujeres/DSC06961.jpg" alt="">
+    <img src="../assets/images/mujeres/DSC06825.jpg" alt="">
+    <img src="../assets/images/mujeres/DSC06968.jpg" alt="">
+  </div>
+</div>
+
+<div class="quote-band">
+  <blockquote>"Mujer virtuosa, ¿quién la hallará?"</blockquote>
+  <cite>Proverbios 31:10 · Cristo Reina Mujeres</cite>
+</div>
+
+<section class="galeria" id="galeria">
+  <div class="g-top">
+    <div><span class="eyebrow">Mujeres Proféticas · 2026</span><span class="title-script">Nuestra</span><h2 class="section-title">Galería</h2></div>
+    <span style="font-size:11px;letter-spacing:.2em;color:rgba(255,255,255,.3);">54 fotos</span>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-cell wide" onclick="openLb(0)"><img src="../assets/images/mujeres/DSC06794.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(1)"><img src="../assets/images/mujeres/DSC06800.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(2)"><img src="../assets/images/mujeres/DSC06801.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(3)"><img src="../assets/images/mujeres/DSC06813.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(4)"><img src="../assets/images/mujeres/DSC06817.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(5)"><img src="../assets/images/mujeres/DSC06818.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(6)"><img src="../assets/images/mujeres/DSC06819.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(7)"><img src="../assets/images/mujeres/DSC06820.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(8)"><img src="../assets/images/mujeres/DSC06821.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(9)"><img src="../assets/images/mujeres/DSC06822.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(10)"><img src="../assets/images/mujeres/DSC06825.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(11)"><img src="../assets/images/mujeres/DSC06826.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(12)"><img src="../assets/images/mujeres/DSC06829.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(13)"><img src="../assets/images/mujeres/DSC06837.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(14)"><img src="../assets/images/mujeres/DSC06840.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(15)"><img src="../assets/images/mujeres/DSC06841.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(16)"><img src="../assets/images/mujeres/DSC06842.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(17)"><img src="../assets/images/mujeres/DSC06846.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(18)"><img src="../assets/images/mujeres/DSC06847.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(19)"><img src="../assets/images/mujeres/DSC06848.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(20)"><img src="../assets/images/mujeres/DSC06856.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(21)"><img src="../assets/images/mujeres/DSC06857.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(22)"><img src="../assets/images/mujeres/DSC06871.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(23)"><img src="../assets/images/mujeres/DSC06875.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(24)"><img src="../assets/images/mujeres/DSC06877.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(25)"><img src="../assets/images/mujeres/DSC06879.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(26)"><img src="../assets/images/mujeres/DSC06889.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(27)"><img src="../assets/images/mujeres/DSC06890.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(28)"><img src="../assets/images/mujeres/DSC06891.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(29)"><img src="../assets/images/mujeres/DSC06893.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(30)"><img src="../assets/images/mujeres/DSC06894.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(31)"><img src="../assets/images/mujeres/DSC06897.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(32)"><img src="../assets/images/mujeres/DSC06898.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(33)"><img src="../assets/images/mujeres/DSC06899.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(34)"><img src="../assets/images/mujeres/DSC06900.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(35)"><img src="../assets/images/mujeres/DSC06903.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(36)"><img src="../assets/images/mujeres/DSC06909.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(37)"><img src="../assets/images/mujeres/DSC06910.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(38)"><img src="../assets/images/mujeres/DSC06918.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(39)"><img src="../assets/images/mujeres/DSC06925.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(40)"><img src="../assets/images/mujeres/DSC06927.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(41)"><img src="../assets/images/mujeres/DSC06928.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(42)"><img src="../assets/images/mujeres/DSC06933.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(43)"><img src="../assets/images/mujeres/DSC06934.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(44)"><img src="../assets/images/mujeres/DSC06940.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(45)"><img src="../assets/images/mujeres/DSC06943.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(46)"><img src="../assets/images/mujeres/DSC06948.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(47)"><img src="../assets/images/mujeres/DSC06951.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(48)"><img src="../assets/images/mujeres/DSC06960.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell wide" onclick="openLb(49)"><img src="../assets/images/mujeres/DSC06961.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(50)"><img src="../assets/images/mujeres/DSC06968.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(51)"><img src="../assets/images/mujeres/DSC06973.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(52)"><img src="../assets/images/mujeres/DSC06974.jpg" alt=""><div class="g-overlay"></div></div>
+    <div class="g-cell" onclick="openLb(53)"><img src="../assets/images/mujeres/DSC06975.jpg" alt=""><div class="g-overlay"></div></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lb" onclick="if(event.target===this)closeLb()">
+  <span class="lb-close" onclick="closeLb()">✕</span>
+  <button class="lb-nav lb-prev" onclick="nav(-1);event.stopPropagation()">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" onclick="nav(1);event.stopPropagation()">›</button>
+  <span class="lb-counter" id="lbC"></span>
+</div>
+
+<div class="cta">
+  <div><p class="cta-title">¿Sos mujer?</p><h2 class="cta-heading">Sos bienvenida</h2><p class="cta-body">Cristo Reina Mujeres te espera. Escribinos para saber cuándo es el próximo encuentro.</p></div>
+  <a href="https://wa.me/5491100000000?text=Hola%21+Quiero+info+sobre+Cristo+Reina+Mujeres+%F0%9F%99%8C" target="_blank" class="btn-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Escribinos por WhatsApp</a>
+</div>
+
+<footer>
+  <span class="footer-copy">© 2025 Ministerio Cristo Reina</span>
+  <a href="../index.html" class="footer-back">← Inicio</a>
+</footer>
+
+<a href="https://wa.me/5491100000000?text=Hola%21+Cristo+Reina+Mujeres" target="_blank" style="position:fixed;bottom:24px;right:24px;z-index:400;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.35);" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:white;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const imgs=['../assets/images/mujeres/DSC06794.jpg','../assets/images/mujeres/DSC06800.jpg','../assets/images/mujeres/DSC06801.jpg','../assets/images/mujeres/DSC06813.jpg','../assets/images/mujeres/DSC06817.jpg','../assets/images/mujeres/DSC06818.jpg','../assets/images/mujeres/DSC06819.jpg','../assets/images/mujeres/DSC06820.jpg','../assets/images/mujeres/DSC06821.jpg','../assets/images/mujeres/DSC06822.jpg','../assets/images/mujeres/DSC06825.jpg','../assets/images/mujeres/DSC06826.jpg','../assets/images/mujeres/DSC06829.jpg','../assets/images/mujeres/DSC06837.jpg','../assets/images/mujeres/DSC06840.jpg','../assets/images/mujeres/DSC06841.jpg','../assets/images/mujeres/DSC06842.jpg','../assets/images/mujeres/DSC06846.jpg','../assets/images/mujeres/DSC06847.jpg','../assets/images/mujeres/DSC06848.jpg','../assets/images/mujeres/DSC06856.jpg','../assets/images/mujeres/DSC06857.jpg','../assets/images/mujeres/DSC06871.jpg','../assets/images/mujeres/DSC06875.jpg','../assets/images/mujeres/DSC06877.jpg','../assets/images/mujeres/DSC06879.jpg','../assets/images/mujeres/DSC06889.jpg','../assets/images/mujeres/DSC06890.jpg','../assets/images/mujeres/DSC06891.jpg','../assets/images/mujeres/DSC06893.jpg','../assets/images/mujeres/DSC06894.jpg','../assets/images/mujeres/DSC06897.jpg','../assets/images/mujeres/DSC06898.jpg','../assets/images/mujeres/DSC06899.jpg','../assets/images/mujeres/DSC06900.jpg','../assets/images/mujeres/DSC06903.jpg','../assets/images/mujeres/DSC06909.jpg','../assets/images/mujeres/DSC06910.jpg','../assets/images/mujeres/DSC06918.jpg','../assets/images/mujeres/DSC06925.jpg','../assets/images/mujeres/DSC06927.jpg','../assets/images/mujeres/DSC06928.jpg','../assets/images/mujeres/DSC06933.jpg','../assets/images/mujeres/DSC06934.jpg','../assets/images/mujeres/DSC06940.jpg','../assets/images/mujeres/DSC06943.jpg','../assets/images/mujeres/DSC06948.jpg','../assets/images/mujeres/DSC06951.jpg','../assets/images/mujeres/DSC06960.jpg','../assets/images/mujeres/DSC06961.jpg','../assets/images/mujeres/DSC06968.jpg','../assets/images/mujeres/DSC06973.jpg','../assets/images/mujeres/DSC06974.jpg','../assets/images/mujeres/DSC06975.jpg'];
+let cur=0;
+function openLb(i){cur=i;document.getElementById('lbImg').src=imgs[i];document.getElementById('lbC').textContent=(i+1)+' / '+imgs.length;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+function nav(d){cur=(cur+d+imgs.length)%imgs.length;document.getElementById('lbImg').src=imgs[cur];document.getElementById('lbC').textContent=(cur+1)+' / '+imgs.length;}
+document.addEventListener('keydown',e=>{if(!document.getElementById('lb').classList.contains('open'))return;if(e.key==='ArrowRight')nav(1);if(e.key==='ArrowLeft')nav(-1);if(e.key==='Escape')closeLb();});
+</script>
+</body>
+</html>
